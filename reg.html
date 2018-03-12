@@ -1,0 +1,99 @@
+<html>
+<body>
+<br><br>
+<center>
+<form name="reg" method="POST" action="#">
+<h2>Application Form</h2>
+<br><br>
+<table>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" name="uname"></td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td><input type="text" name="address"> </td>
+	</tr>	
+	<tr>
+		<td>Gender</td>
+		<td>
+			<input type="radio" name="gender" selected="true" value="male">Male
+			<input type="radio" name="gender" selected="true" value="female">Female		
+		
+		</td>
+	</tr>
+	<tr>
+		<td>Course</td>
+		<td>
+			<input type="select" name="course">
+			<option value="-1">select...</option>
+			<option value="ddmca">DDMCA</option>
+			<option value="btech">B.Tech</option>
+			<option value="mba">MBA</option>
+			<option value="mbbs">MBBS</option>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>Please choose your interests</td>
+		<td>
+			<input type="checkbox" name="interests">Music
+			<input type="checkbox" name="interests">Sports
+			<input type="checkbox" name="interests">Gymnastics
+			<input type="checkbox" name="interests">Programming
+			<input type="checkbox" name="interests">Designing
+		</td>
+	</tr>
+	<tr>
+		<td>Phone</td>
+		<td><input type="text" name="phone"></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="email" required></td>
+	</tr>
+
+</table>
+<br><br>
+<input type="submit" name="btn" value="Submit" onclick="validate()">
+</form>
+</center>
+<script>
+function validate()
+{
+	if(document.reg.uname.value=="")
+	{
+		alert("Please Enter Your Name");
+		document.reg.uname.focus();
+		return(false);
+	}
+	if(document.reg.address.value=="")
+	{
+		alert("Please Enter Your Address");
+		document.reg.address.focus();
+		return(false);
+	}
+
+	if((document.reg.gender['0']=="")||(document.reg.gender['1']==""))
+	{
+		alert("Please Select Your Gender");
+		document.reg.gender.focus();
+		return(false);
+	}
+	if((document.reg.phone.value=="")||(document.reg.phone.length(value)<10)||
+        (document.reg.phone.value==isNaN()))
+	{
+		alert("Please enter a valid phone number");
+		document.reg.gender.focus();
+		return(false);
+	}
+	if((document.reg.email.value('')==""))
+		alert("please enter a valid email address");
+	{
+		document.reg.email.focus();
+		return(false);
+	}
+}
+</script>
+</body>
+</html>
